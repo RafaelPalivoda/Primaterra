@@ -1,9 +1,18 @@
+/*
+* Software desenvolvido e licenciado por Ab Solucoes em Ti
+* Todos os direitos reservados
+* Qualquer cópia não autorizada estará sujeita a sanções cíveis e criminais
+*/
 package sistema;
+/*
+* Autores: Rafael Palivoda & Matheus Balão
+* Coordenação de: Alexsandro Barboza
+*/
 import java.util.Scanner;
 
 public class Entidade{
 
-public class PessoaJuridica {
+public class PessoaJuridica extends Entidade {
     private String nome, razaosocial, email, bairro, logradouro, cidade, estado, pais;
     private int  cep, numero;
     private int cnpj, telefone;
@@ -158,7 +167,7 @@ String estado, String pais, String dtFundacao, int enquadFiscal, int tipoContrib
     
 
 }
-    public class PessoaFisica {
+    public class PessoaFisica extends Entidade {
     private int cpf, rg;
     private String nome, cargo;
 

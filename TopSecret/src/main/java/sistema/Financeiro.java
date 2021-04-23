@@ -1,32 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* Software desenvolvido e licenciado por Ab Solucoes em Ti
+* Todos os direitos reservados
+* Qualquer cópia não autorizada estará sujeita a sanções cíveis e criminais
+*/
 package sistema;
-
+/*
+* Autores: Rafael Palivoda & Matheus Balão
+* Coordenação de: Alexsandro Barboza
+*/
 import java.util.Date;
-
-/**
- *
- * @author Ab Soluções 01
- */
 public class Financeiro {
-
     public class PlanoDeContas {
 
         private int codigoReceita;
         private int codigoDespesa;
 
-        public float calcularLucro() {
+        public void calcularLucro() {
             
         }
 
-        public float totalReceita() {
+        public void totalReceita() {
 
         }
 
-        public float totalDespesas() {
+        public void totalDespesas() {
 
         }
     } // fim da classe Plano de Contas
