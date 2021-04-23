@@ -11,12 +11,9 @@ package sistema;
  */
 public class Area {
 
-    private float metragem;
-    private float valorMetro;
+    private float metragem, valorMetro, aproveitamento, valorTotal;
     private int qtdadeLotes;
     private String observacao;
-    private float aproveitamento;
-    private float valorTotal;
 
     public float getMetragem() {
         return metragem;
@@ -69,8 +66,7 @@ public class Area {
 
     public class Permuta {
 
-        private float porcentagem;
-        private float valor;
+        private float porcentagem, valor;
         private int quantidade;
 
         public float getPorcentagem() {
@@ -97,16 +93,19 @@ public class Area {
             this.quantidade = quantidade;
         }
 
+        public Permuta(float porcentagem, float valor, int quantidade) {
+            setPorcentagem(porcentagem);
+            setValor(valor);
+            setQuantidade(quantidade);
+        }
+
     }
 
     public class Empreendimento {
 
-        private int codigo;
+        private int codigo, codigoIncorporadores;
         private String nomeEmpreendimento;
-        private int codigoIncorporadores;
-        private float custoPrevisto;
-        private float custoEfetivo;
-        private float custoTotal;
+        private float custoPrevisto, custoEfetivo, custoTotal;
 
         public String getNomeEmpreendimento() {
             return nomeEmpreendimento;
@@ -135,9 +134,17 @@ public class Area {
         public float custoTotal() {
             return custoPrevisto - custoEfetivo;
         }
+
+        public Empreendimento(String nomeEmpreendimento, float custoPrevisto, float custoEfetivo) {
+            setNomeEmpreendimento(nomeEmpreendimento);
+            setCustoPrevisto(custoPrevisto);
+            setCustoEfetivo(custoEfetivo);
+        }
+
     }
-    
+
     public class Etapas {
+
         private int codigo;
         public String nome;
 
@@ -148,22 +155,27 @@ public class Area {
         public void setNome(String nome) {
             this.nome = nome;
         }
-        
-        public String gerarEtapa(){
-            
+
+        public String gerarEtapa() {
+
+        }
+
+        public statusEtapa() {
+
+        }
+
+        public Etapas(String nome) {
+            setNome(nome);
         }
         
-        public statusEtapa(){
-            
-        }
+        
     }
-    
-    public class Incorporadores{
+
+    public class Incorporadores {
+
         private String nome;
-        private int codigoIncorporadores;
-        private float porcentagemRateio;
-        private float porcentagemPermuta;
-        private int qtdadeLotes;
+        private int codigoIncorporadores, qtdadeLotes;
+        private float porcentagemRateio, porcentagemPermuta;
 
         public String getNome() {
             return nome;
@@ -196,14 +208,23 @@ public class Area {
         public void setQtdadeLotes(int qtdadeLotes) {
             this.qtdadeLotes = qtdadeLotes;
         }
-        
-        public void gerarRateio(){
-            
+
+        public void gerarRateio() {
+
+        }
+
+        public void gerarIncorporador() {
+
+        }
+
+        public Incorporadores(String nome, int qtdadeLotes, float porcentagemRateio, float porcentagemPermuta) {
+            setNome(nome);
+            setQtdadeLotes(qtdadeLotes);
+            setPorcentagemRateio(porcentagemRateio);
+            setPorcentagemPermuta(porcentagemPermuta);
         }
         
-        public void gerarIncorporador(){
-            
-        }
+        
     }
 
 }
