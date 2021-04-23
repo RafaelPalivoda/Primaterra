@@ -160,7 +160,7 @@ public class Area {
 
         }
 
-        public statusEtapa() {
+        public void statusEtapa() {
 
         }
 
