@@ -15,11 +15,10 @@ public class Financeiro {
 
     public class PlanoDeContas {
 
-        private int codigoReceita;
-        private int codigoDespesa;
+        private int codigoReceita, codigoDespesa;
 
         public float calcularLucro() {
-            
+
         }
 
         public float totalReceita() {
@@ -29,15 +28,15 @@ public class Financeiro {
         public float totalDespesas() {
 
         }
-    } // fim da classe Plano de Contas
+
+    } // fim da classe plano de contas
 
     public class Receitas {
 
         private int codigo;
         private String nome;
-        private float valor;
+        private float valor, receita;
         private Date dataRecebimento;
-        private float receita;
 
         public String getNome() {
             return nome;
@@ -65,12 +64,9 @@ public class Financeiro {
 
         public class Antecipacao {
 
-            private int codigo;
-            private int lote;
-            private Date dataVenda;
-            private float valorMetragem;
-            private float metragem;
-            private Date dataAporte;
+            private int codigo, lote;
+            private Date dataVenda, dataAporte;
+            private float valorMetragem, metragem, valorTotal;
 
             public int getLote() {
                 return lote;
@@ -112,20 +108,25 @@ public class Financeiro {
                 this.dataAporte = dataAporte;
             }
 
-            public float calcularValorTotal() {
-                return metragem * valorMetragem;
+            public void calcularValorTotal() {
+                valorTotal = metragem * valorMetragem;
             }
 
+            public Antecipacao(int lote, Date dataVenda, float valorMetragem, float metragem, Date dataAporte) {
+                setLote(lote);
+                setDataVenda(dataVenda);
+                setValorMetragem(valorMetragem);
+                setMetragem(metragem);
+                setDataAporte(dataAporte);
+            }
         } // fim classe antecipacao
 
         public class Aportes {
-            
+
             private String nome;
             private int numeroNf;
             private float valor;
-            private Date dataLancamento;
-            private Date dataVencimento;
-            private Date dataAporte;
+            private Date dataLancamento, dataVencimento, dataAporte;
 
             public String getNome() {
                 return nome;
@@ -174,7 +175,16 @@ public class Financeiro {
             public void setDataAporte(Date dataAporte) {
                 this.dataAporte = dataAporte;
             }
-           
+
+            public Aportes(String nome, int numeroNf, float valor, Date dataLancamento, Date dataVencimento, Date dataAporte) {
+                setNome(nome);
+                setNumeroNf(numeroNf);
+                setValor(valor);
+                setDataLancamento(dataLancamento);
+                setDataVencimento(dataVencimento);
+                setDataAporte(dataAporte);
+            }
+
         } // fim da classe aportes
 
     } // fim da classe receitas
@@ -183,7 +193,7 @@ public class Financeiro {
 
         private int codigo;
         private String nome;
-        private int valor;
+        private float valor;
         private Date dataVencimento;
 
         public String getNome() {
@@ -194,11 +204,11 @@ public class Financeiro {
             this.nome = nome;
         }
 
-        public int getValor() {
+        public float getValor() {
             return valor;
         }
 
-        public void setValor(int valor) {
+        public void setValor(float valor) {
             this.valor = valor;
         }
 
@@ -210,11 +220,17 @@ public class Financeiro {
             this.dataVencimento = dataVencimento;
         }
 
+        public Despesas(String nome, float valor, Date dataVencimento) {
+            setNome(nome);
+            setValor(valor);
+            setDataVencimento(dataVencimento);
+        }
     } // fim da classe despesas
+
     public class CentroDeCusto {
+
         private int codigo;
-        private String centroDeCusto;
-        private String tipoCusto;
+        private String centroDeCusto, tipoCusto;
 
         public String getCentroDeCusto() {
             return centroDeCusto;
@@ -232,5 +248,12 @@ public class Financeiro {
             this.tipoCusto = tipoCusto;
         }
 
-    }
+        public CentroDeCusto() {
+        }
+
+        public CentroDeCusto(String centroDeCusto, String tipoCusto) {
+            setCentroDeCusto(centroDeCusto);
+            setTipoCusto(tipoCusto);
+        }
+    } // fim da classe centro de custo
 }
