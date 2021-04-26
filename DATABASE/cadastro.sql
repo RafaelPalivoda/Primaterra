@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS InscricaoSubstituta(
 );
 CREATE TABLE IF NOT EXISTS Usuario(
     IdUsuario SERIAL primary key NOT NULL ,
-    usuario NOT NULL UNIQUE varchar(50),
-    senha varchar(50),
+    usuario varchar(50) NOT NULL UNIQUE,
+    senha varchar(50)
 );
 CREATE TABLE IF NOT EXISTS TipoProjeto(
     IdTipoProjeto SERIAL primary key NOT NULL ,
