@@ -14,8 +14,14 @@ CREATE TABLE IF NOT EXISTS Entidade(
     sexo char,
     cargo varchar(50),
     dtCadastro date,
+    codigoContato int,
+    codigoEnquad int,
+    codigoEndereco int,
+    codigoContribuinte int,
+    codigoIE int,
+    idUsuario int,
     FOREIGN KEY (codigoContato) REFERENCES Contato (codigoContato),
-    FOREIGN KEY (condigoEnquad) REFERENCES enquadFiscal(codigoEnquad),
+    FOREIGN KEY (codigoEnquad) REFERENCES enquadFiscal(codigoEnquad),
     FOREIGN KEY (codigoEndereco) REFERENCES Endereco (codigoEndereco),
     FOREIGN KEY (codigoContribuinte) REFERENCES TipoContribuinte (codigoContribuinte),
     FOREIGN KEY (codigoIE) REFERENCES InscricaoEstadual (codigoIE),
@@ -38,8 +44,12 @@ CREATE TABLE IF NOT EXISTS email(
 );
 CREATE TABLE IF NOT EXISTS Contato(
     codigoContato SERIAL primary key NOT NULL ,
-    FOREIGN KEY (codigoEmail) REFERENCES email (codigoEmail),
-    FOREIGN KEY (codigoTelefone) REFERENCES Telefone (codigoTelefone)
+    codigoemail int,
+    codigotelefone int,
+    codigoemail int,
+    codigotelefone int,
+    FOREIGN KEY (codigoemail) REFERENCES email (codigoemail),
+    FOREIGN KEY (codigotelefone) REFERENCES telefone (codigotelefone)
 );
 CREATE TABLE IF NOT EXISTS TipoContribuinte(
     codigoContribuinte SERIAL primary key NOT NULL ,
@@ -55,6 +65,7 @@ CREATE TABLE IF NOT EXISTS Endereco(
     estado varchar(200),
     pais varchar(200),
     complemento varchar(50),
+    codigotipoendereco int,
     FOREIGN KEY (codigoTipoEndereco) REFERENCES TipoEndereco (codigoTipoEndereco)
 );
 CREATE TABLE IF NOT EXISTS TipoEndereco(
@@ -64,11 +75,12 @@ CREATE TABLE IF NOT EXISTS TipoEndereco(
 CREATE TABLE IF NOT EXISTS InscricaoEstadual(
     codigoIE SERIAL primary key NOT NULL ,
     Inscricao int,
+    codigoIes int,
     FOREIGN KEY (codigoIeS) REFERENCES InscricaoSubstituta (codigoIeS)
 );
 CREATE TABLE IF NOT EXISTS InscricaoSubstituta(
     codigoIeS SERIAL primary key NOT NULL ,
-    InscricaoSubstituta int,
+    InscricaoSubstituta int
 );
 CREATE TABLE IF NOT EXISTS Usuario(
     IdUsuario SERIAL primary key NOT NULL ,
