@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS Entidade(
     sexo char,
     cargo varchar(50),
     dtCadastro date,
-    FOREIGN KEY (codigoContato) REFERENCES (codigoContato),
-    FOREIGN KEY (condigoEnquad) REFERENCES (codigoEnquad),
-    FOREIGN KEY (codigoEndereco) REFERENCES (codigoEndereco),
-    FOREIGN KEY (codigoContribuinte) REFERENCES (codigoContribuinte),
-    FOREIGN KEY (codigoIE) REFERENCES (codigoIE),
-    FOREIGN KEY (idUsuario) REFERENCES (idUsuario)
+    FOREIGN KEY (codigoContato) REFERENCES Contato (codigoContato),
+    FOREIGN KEY (condigoEnquad) REFERENCES enquadFiscal(codigoEnquad),
+    FOREIGN KEY (codigoEndereco) REFERENCES Endereco (codigoEndereco),
+    FOREIGN KEY (codigoContribuinte) REFERENCES TipoContribuinte (codigoContribuinte),
+    FOREIGN KEY (codigoIE) REFERENCES InscricaoEstadual (codigoIE),
+    FOREIGN KEY (idUsuario) REFERENCES Usuario (idUsuario)
 );
 CREATE TABLE IF NOT EXISTS Telefone(
     codigoTelefone SERIAL primary key NOT NULL ,
@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS email(
 );
 CREATE TABLE IF NOT EXISTS Contato(
     codigoContato SERIAL primary key NOT NULL ,
-    FOREIGN KEY (codigoEmail) REFERENCES (codigoEmail),
-    FOREIGN KEY (codigoTelefone) REFERENCES (codigoTelefone)
+    FOREIGN KEY (codigoEmail) REFERENCES email (codigoEmail),
+    FOREIGN KEY (codigoTelefone) REFERENCES Telefone (codigoTelefone)
 );
 CREATE TABLE IF NOT EXISTS TipoContribuinte(
     codigoContribuinte SERIAL primary key NOT NULL ,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Endereco(
     estado varchar(200),
     pais varchar(200),
     complemento varchar(50),
-    FOREIGN KEY (codigoTipoEndereco) REFERENCES (codigoTipoEndereco)
+    FOREIGN KEY (codigoTipoEndereco) REFERENCES TipoEndereco (codigoTipoEndereco)
 );
 CREATE TABLE IF NOT EXISTS TipoEndereco(
     codigoTipoEndereco SERIAL primary key NOT NULL ,
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS TipoEndereco(
 CREATE TABLE IF NOT EXISTS InscricaoEstadual(
     codigoIE SERIAL primary key NOT NULL ,
     Inscricao int,
-    FOREIGN KEY (codigoIeS) REFERENCES (codigoIeS)
+    FOREIGN KEY (codigoIeS) REFERENCES InscricaoSubstituta (codigoIeS)
 );
 CREATE TABLE IF NOT EXISTS InscricaoSubstituta(
     codigoIeS SERIAL primary key NOT NULL ,
