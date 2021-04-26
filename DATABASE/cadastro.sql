@@ -1,6 +1,6 @@
 CREATE DATABASE Sistema;
 CREATE TABLE IF NOT EXISTS Entidade(
-    idEntidade int primary key NOT NULL AUTO_INCREMENT,
+    idEntidade SERIAL primary key NOT NULL ,
     codigoEntidade int,
     nome varchar(200),
     razaoSocial varchar(300),
@@ -22,31 +22,31 @@ CREATE TABLE IF NOT EXISTS Entidade(
     FOREIGN KEY (idUsuario) REFERENCES (idUsuario)
 );
 CREATE TABLE IF NOT EXISTS Telefone(
-    codigoTelefone int primary key NOT NULL AUTO_INCREMENT,
+    codigoTelefone SERIAL primary key NOT NULL ,
     ddd int,
     fixo int,
     celular int
 );
 CREATE TABLE IF NOT EXISTS enquadFiscal(
-    codigoEnquad int primary key NOT NULL AUTO_INCREMENT,
+    codigoEnquad SERIAL primary key NOT NULL ,
     nomeEnquad varchar(200)
 );
 CREATE TABLE IF NOT EXISTS email(
-    codigoEmail int primary key NOT NULL AUTO_INCREMENT,
+    codigoEmail SERIAL primary key NOT NULL ,
     emailPrincipal varchar(300),
     emailSecundario varchar(300)
 );
 CREATE TABLE IF NOT EXISTS Contato(
-    codigoContato int primary key NOT NULL AUTO_INCREMENT,
+    codigoContato SERIAL primary key NOT NULL ,
     FOREIGN KEY (codigoEmail) REFERENCES (codigoEmail),
     FOREIGN KEY (codigoTelefone) REFERENCES (codigoTelefone)
 );
 CREATE TABLE IF NOT EXISTS TipoContribuinte(
-    codigoContribuinte int primary key NOT NULL AUTO_INCREMENT,
+    codigoContribuinte SERIAL primary key NOT NULL ,
     tipoContribuinte varchar(100)
 );
 CREATE TABLE IF NOT EXISTS Endereco(
-    codigoEndereco int primary key NOT NULL AUTO_INCREMENT,
+    codigoEndereco SERIAL primary key NOT NULL ,
     cep int,
     logradouro varchar(200),
     numero int,
@@ -58,28 +58,28 @@ CREATE TABLE IF NOT EXISTS Endereco(
     FOREIGN KEY (codigoTipoEndereco) REFERENCES (codigoTipoEndereco)
 );
 CREATE TABLE IF NOT EXISTS TipoEndereco(
-    codigoTipoEndereco int primary key NOT NULL AUTO_INCREMENT,
+    codigoTipoEndereco SERIAL primary key NOT NULL ,
     TipoEndereco varchar(100) 
 );
 CREATE TABLE IF NOT EXISTS InscricaoEstadual(
-    codigoIE int primary key NOT NULL AUTO_INCREMENT,
+    codigoIE SERIAL primary key NOT NULL ,
     Inscricao int,
     FOREIGN KEY (codigoIeS) REFERENCES (codigoIeS)
 );
 CREATE TABLE IF NOT EXISTS InscricaoSubstituta(
-    codigoIeS int primary key NOT NULL AUTO_INCREMENT,
+    codigoIeS SERIAL primary key NOT NULL ,
     InscricaoSubstituta int,
 );
 CREATE TABLE IF NOT EXISTS Usuario(
-    IdUsuario int primary key NOT NULL AUTO_INCREMENT,
+    IdUsuario SERIAL primary key NOT NULL ,
     usuario NOT NULL UNIQUE varchar(50),
     senha varchar(50),
 );
 CREATE TABLE IF NOT EXISTS TipoProjeto(
-    IdTipoProjeto int primary key NOT NULL AUTO_INCREMENT,
+    IdTipoProjeto SERIAL primary key NOT NULL ,
     TipoProjeto varchar(100)
 );
 CREATE TABLE IF NOT EXISTS TipoNegociacao(
-    IdTipoNegociacao int primary key NOT NULL AUTO_INCREMENT,
+    IdTipoNegociacao SERIAL primary key NOT NULL ,
     TipoNegociacao varchar(50)
 );
