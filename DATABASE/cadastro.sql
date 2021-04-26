@@ -68,12 +68,12 @@ CREATE TABLE IF NOT EXISTS InscricaoEstadual(
 );
 CREATE TABLE IF NOT EXISTS InscricaoSubstituta(
     codigoIeS SERIAL primary key NOT NULL ,
-    InscricaoSubstituta int,
+    InscricaoSubstituta int
 );
 CREATE TABLE IF NOT EXISTS Usuario(
     IdUsuario SERIAL primary key NOT NULL ,
-    usuario NOT NULL UNIQUE varchar(50),
-    senha varchar(50),
+    usuario varchar(50) NOT NULL UNIQUE,
+    senha varchar(50)
 );
 CREATE TABLE IF NOT EXISTS TipoProjeto(
     IdTipoProjeto SERIAL primary key NOT NULL ,
