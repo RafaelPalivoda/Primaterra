@@ -75,3 +75,11 @@ CREATE TABLE IF NOT EXISTS Usuario(
     usuario NOT NULL UNIQUE varchar(50),
     senha varchar(50),
 );
+CREATE TABLE IF NOT EXISTS TipoProjeto(
+    IdTipoProjeto int primary key NOT NULL AUTO_INCREMENT,
+    TipoProjeto varchar(100)
+);
+CREATE TABLE IF NOT EXISTS TipoNegociacao(
+    IdTipoNegociacao int primary key NOT NULL AUTO_INCREMENT,
+    TipoNegociacao varchar(50)
+);
