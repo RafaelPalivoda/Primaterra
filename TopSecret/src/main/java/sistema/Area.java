@@ -4,32 +4,67 @@
 * Qualquer cópia não autorizada estará sujeita a sanções cíveis e criminais
 */
 package sistema;
+
 /*
 * Autores: Rafael Palivoda & Matheus Balão
 * Coordenação de: Alexsandro Barboza
 */
 public class Area {
-
-    private float metragem, valorMetro, aproveitamento, valorTotal;
+    //Atributos da Area.
+    private float metragemInicial, metragemFinal, valorInicial, valorFinal, valorMetroFinal , valorMetroInicial, porcentagemAproveitamento, porcentagemConvertida;
     private int qtdadeLotes;
     private String observacao;
 
-    public float getMetragem() {
-        return metragem;
+    
+    //Metodos Get e Set Metragem Inicial do terreno.
+    public float getMetragemInicial() {
+        return metragemInicial;
     }
 
-    public void setMetragem(float metragem) {
-        this.metragem = metragem;
+    public void setMetragemInicial(float metragemInicial) {
+        this.metragemInicial = metragemInicial;
+    }
+    //Metodos Get e Set da Metragem que será aproveitada.
+    public float getMetragemFinal() {
+        return metragemFinal;
     }
 
-    public float getValorMetro() {
-        return valorMetro;
+    public void setMetragemFinal(float metragemFinal) {
+        this.metragemFinal = metragemFinal;
     }
-
-    public void setValorMetro(float valorMetro) {
-        this.valorMetro = valorMetro;
+    // Métodos Get e Set do valor investido inicialmente no terreno
+    public void setValorInicial(float valorInicial){
+        this.valorInicial = valorInicial;
     }
-
+    public float getValorInicial(){
+        return valorInicial;
+    }
+    // Método que traz o valor do metro quadrado inicial
+    public float getValorMetroInicial() {
+        return valorMetroInicial;
+    }
+    /*Métodos Calcula valor inicial do metro quadrado
+    *É calculado dividindo o valor gasto inicialmente pela metragem total do terreno
+    */
+    public void calculaValorMetro() {
+        this.valorMetroInicial = valorInicial / metragemInicial;
+    }
+    
+    public float getValorMetroFinal() {
+        return valorMetroFinal;
+    }
+    //Transformar a porcentagem em float
+    public void porcetagemParaFloat(){
+        porcentagemConvertida = (this.porcentagemAproveitamento / 100);
+        metragemFinal = porcentagemConvertida * metragemInicial;
+    }
+    /*Métodos Calcula valor final do metro quadrado
+    *É calculado dividindo o valor gasto inicialmente pela metragem aproveitada do terreno
+    */
+    public void calculaValorMetroFinal() {
+        this.valorMetroFinal = valorInicial / metragemFinal;
+    }
+    // Métodos Get e Set da quantidade prevista de lotes do terreno.
     public int getQtdadeLotes() {
         return qtdadeLotes;
     }
@@ -37,7 +72,7 @@ public class Area {
     public void setQtdadeLotes(int qtdadeLotes) {
         this.qtdadeLotes = qtdadeLotes;
     }
-
+    //Métodos Get e Set do campo Observação.
     public String getObservacao() {
         return observacao;
     }
@@ -45,43 +80,41 @@ public class Area {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-
-    public float getAproveitamento() {
-        return aproveitamento;
+    // Métodos que definem a porcentagem do aproveitamento digitada pelo usuário
+    public float getPorcentagemAproveitamento() {
+        return porcentagemAproveitamento;
     }
 
-    public void setAproveitamento(float aproveitamento) {
-        this.aproveitamento = aproveitamento;
+    public void setPorcentagemAproveitamento(float porcentagemAproveitamento) {
+        this.porcentagemAproveitamento = porcentagemAproveitamento;
     }
 
-    public float valorTotal() {
-        this.valorTotal = valorMetro * qtdadeLotes;
-        return valorTotal;
+    public Area(float metragemInicial, float valorInicial, float porcentagemAproveitamento, int qtdadeLotes, String observacao) {
+        this.metragemInicial = metragemInicial;
+        this.valorInicial = valorInicial;
+        this.porcentagemAproveitamento = porcentagemAproveitamento;
+        this.qtdadeLotes = qtdadeLotes;
+        this.observacao = observacao;
     }
-
-    public float gerarArea() {
-        return metragem * aproveitamento;
-    }
-
+    // Classe para cadastro e calculo de permuta
     public class Permuta {
-
-        private float porcentagem, valor;
+        private float porcentagemPermuta, valorPermuta;
         private int quantidade;
 
-        public float getPorcentagem() {
-            return porcentagem;
+        public float getPorcentagemPermuta() {
+            return porcentagemPermuta;
         }
 
-        public void setPorcentagem(float porcentagem) {
-            this.porcentagem = porcentagem;
+        public void setPorcentagemPermuta(float porcentagemPermuta) {
+            this.porcentagemPermuta = porcentagemPermuta;
         }
 
-        public float getValor() {
-            return valor;
+        public float getValorPermuta() {
+            return valorPermuta;
         }
 
-        public void setValor(float valor) {
-            this.valor = valor;
+        public void setValorPermuta(float valorPermuta) {
+            this.valorPermuta = valorPermuta;
         }
 
         public int getQuantidade() {
@@ -92,9 +125,9 @@ public class Area {
             this.quantidade = quantidade;
         }
 
-        public Permuta(float porcentagem, float valor, int quantidade) {
-            setPorcentagem(porcentagem);
-            setValor(valor);
+        public Permuta(float porcentagemPermuta, float valorPermuta, int quantidade) {
+            setPorcentagemPermuta(porcentagemPermuta);
+            setValorPermuta(valorPermuta);
             setQuantidade(quantidade);
         }
 

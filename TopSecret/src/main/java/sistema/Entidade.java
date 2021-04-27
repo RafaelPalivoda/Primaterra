@@ -8,17 +8,13 @@ package sistema;
 * Autores: Rafael Palivoda & Matheus Balão
 * Coordenação de: Alexsandro Barboza
 */
-import java.util.Scanner;
+import java.util.Date;
 
 public class Entidade{
-
-public class PessoaJuridica extends Entidade {
-    private String nome, razaosocial, email, bairro, logradouro, cidade, estado, pais;
-    private int  cep, numero;
-    private int cnpj, telefone;
-    private String dtFundacao, dtCadastro;
-    private int enquadFiscal, tipoContribuinte;
-
+    private String nome, email, bairro, logradouro, cidade, estado, pais;
+    private int  cep, numero, telefone;
+    private Date  dtCadastro;
+    
     public String getNome() {
         return nome;
     }
@@ -26,16 +22,7 @@ public class PessoaJuridica extends Entidade {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getRazaosocial() {
-        return razaosocial;
-    }
-
-    public void setRazaosocial(String razaosocial) {
-        this.razaosocial = razaosocial;
-    }
-
-    public String getEmail() {
+        public String getEmail() {
         return email;
     }
 
@@ -82,23 +69,12 @@ public class PessoaJuridica extends Entidade {
     public void setPais(String pais) {
         this.pais = pais;
     }
-
-    public int getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(int cnpj) {
-        this.cnpj = cnpj;
-    }
-
     public int getTelefone() {
         return telefone;
     }
-
     public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
-
     public int getCep() {
         return cep;
     }
@@ -114,23 +90,57 @@ public class PessoaJuridica extends Entidade {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
-    public String getDtFundacao() {
-        return dtFundacao;
-    }
-
-    public void setDtFundacao(String dtFundacao) {
-        this.dtFundacao = dtFundacao;
-    }
-
-    public String getDtCadastro() {
+    
+    public Date getDtCadastro() {
         return dtCadastro;
     }
 
-    public void setDtCadastro(String dtCadastro) {
+    public void setDtCadastro(Date dtCadastro) {
         this.dtCadastro = dtCadastro;
     }
 
+    public Entidade(String nome, String email, String bairro, String logradouro, String cidade, String estado, String pais, int cep, int numero, int telefone) {
+        setNome(nome);
+        setEmail(email);
+        setBairro(bairro);
+        setLogradouro(logradouro);
+        setCidade(cidade);
+        setEstado(estado);
+        setPais(pais);
+        setCep(cep);
+        setNumero(numero);
+        setTelefone(telefone);
+    }
+
+public class PessoaJuridica extends Entidade {
+    private String razaosocial;
+    private int cnpj, enquadFiscal, tipoContribuinte;
+    private Date dtFundacao;
+
+    public String getRazaosocial() {
+        return razaosocial;
+    }
+
+    public void setRazaosocial(String razaosocial) {
+        this.razaosocial = razaosocial;
+    }
+
+    public int getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(int cnpj) {
+        this.cnpj = cnpj;
+    }
+    
+    public Date getDtFundacao() {
+        return dtFundacao;
+    }
+
+    public void setDtFundacao(Date dtFundacao) {
+        this.dtFundacao = dtFundacao;
+    }
+    
     public int getEnquadFiscal() {
         return enquadFiscal;
     }
@@ -147,7 +157,7 @@ public class PessoaJuridica extends Entidade {
     }
 
         public PessoaJuridica(String nome, String razaosocial, int cnpj, String email,  int telefone, int cep, String bairro, String logradouro, int numero, String cidade,
-String estado, String pais, String dtFundacao, int enquadFiscal, int tipoContribuinte) {
+String estado, String pais, Date dtFundacao, int enquadFiscal, int tipoContribuinte) {
             setNome(nome);
             setRazaosocial(razaosocial);
             setCnpj(cnpj);
@@ -169,14 +179,9 @@ String estado, String pais, String dtFundacao, int enquadFiscal, int tipoContrib
 }
     public class PessoaFisica extends Entidade {
     private int cpf, rg;
-    private String nome, cargo;
+    private String cargo;
 
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-    public String getNome(){
-        return nome;
-    }
+    
     public int getCpf() {
         return cpf;
     }
@@ -201,20 +206,26 @@ String estado, String pais, String dtFundacao, int enquadFiscal, int tipoContrib
         this.cargo = cargo;
     }
 
-    public PessoaFisica(int cpf, int rg) {
+    public PessoaFisica(String nome, int cpf, int rg, String email, int cep, String bairro, String logradouro,
+                        String cidade, String estado, String pais, int numero, int telefone, String cargo) {
+        
+        setNome(nome);
         setCpf(cpf);
         setRg(rg);
+        setEmail(email);
+        setCep(cep);
+        setBairro(bairro);
+        setLogradouro(logradouro);
+        setCidade(cidade);
+        setEstado(estado);
+        setPais(pais);
+        setNumero(numero);
+        setTelefone(telefone);
+        setCargo(cargo);
     }
-    public void mostraCadastroFisico(){
-        System.out.println("Segue dados");
-        System.out.print("O nome do comprador é " + getNome() + "Com cpf " +  getCpf() + ".");
-    }
-    public void geraCadastroFisico(){
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Digite o nome: ");
-        setNome(teclado.nextLine());
-        System.out.println("Digite o Cpf: ");
-        setCpf(teclado.nextInt());
+    
+    public void inserirCadastroFisico(){
+        
     }
 }
 }
