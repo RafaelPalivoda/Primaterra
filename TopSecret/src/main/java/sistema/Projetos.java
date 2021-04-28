@@ -12,7 +12,7 @@ public class Projetos {
 
     public class TipoProjetos {
 
-        private int codigo;
+        private Integer codigo;
         private String nome;
 
         public String getNome() {
@@ -30,7 +30,7 @@ public class Projetos {
 
     public class tipoNegociacao {
 
-        private int codigo;
+        private Integer codigo;
         private String nome;
 
         public String getNome() {

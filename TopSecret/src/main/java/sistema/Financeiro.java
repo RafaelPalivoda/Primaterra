@@ -10,9 +10,9 @@ package sistema;
 */
 import java.util.Date;
 public class Financeiro {
-    public class PlanoDeContas {
-
-        private int codigoReceita, codigoDespesa;
+    public class PlanoDeContas extends Financeiro {
+        
+        private Integer codigoReceita, codigoDespesa;
 
 
         public void calcularLucro() {
@@ -31,9 +31,9 @@ public class Financeiro {
 
     public class Receitas {
 
-        private int codigo;
+        private Integer codigo;
         private String nome;
-        private float valor, receita;
+        private Double valor, receita;
         private Date dataRecebimento;
 
         public String getNome() {
@@ -44,11 +44,11 @@ public class Financeiro {
             this.nome = nome;
         }
 
-        public float getValor() {
+        public Double getValor() {
             return valor;
         }
 
-        public void setValor(float valor) {
+        public void setValor(Double valor) {
             this.valor = valor;
         }
 
@@ -62,15 +62,15 @@ public class Financeiro {
 
         public class Antecipacao {
 
-            private int codigo, lote;
+            private Integer codigo, lote;
             private Date dataVenda, dataAporte;
-            private float valorMetragem, metragem, valorTotal;
+            private Float valorMetragem, metragem, valorTotal;
 
             public int getLote() {
                 return lote;
             }
 
-            public void setLote(int lote) {
+            public void setLote(Integer lote) {
                 this.lote = lote;
             }
 
@@ -82,19 +82,19 @@ public class Financeiro {
                 this.dataVenda = dataVenda;
             }
 
-            public float getValorMetragem() {
+            public Float getValorMetragem() {
                 return valorMetragem;
             }
 
-            public void setValorMetragem(float valorMetragem) {
+            public void setValorMetragem(Float valorMetragem) {
                 this.valorMetragem = valorMetragem;
             }
 
-            public float getMetragem() {
+            public Float getMetragem() {
                 return metragem;
             }
 
-            public void setMetragem(float metragem) {
+            public void setMetragem(Float metragem) {
                 this.metragem = metragem;
             }
 
@@ -110,7 +110,8 @@ public class Financeiro {
                 valorTotal = metragem * valorMetragem;
             }
 
-            public Antecipacao(int lote, Date dataVenda, float valorMetragem, float metragem, Date dataAporte) {
+            public Antecipacao(Integer lote, Date dataVenda, 
+                               Float valorMetragem, Float metragem, Date dataAporte) {
                 setLote(lote);
                 setDataVenda(dataVenda);
                 setValorMetragem(valorMetragem);
@@ -122,8 +123,8 @@ public class Financeiro {
         public class Aportes {
 
             private String nome;
-            private int numeroNf;
-            private float valor;
+            private Integer numeroNf;
+            private Float valor;
             private Date dataLancamento, dataVencimento, dataAporte;
 
             public String getNome() {
@@ -134,19 +135,19 @@ public class Financeiro {
                 this.nome = nome;
             }
 
-            public int getNumeroNf() {
+            public Integer getNumeroNf() {
                 return numeroNf;
             }
 
-            public void setNumeroNf(int numeroNf) {
+            public void setNumeroNf(Integer numeroNf) {
                 this.numeroNf = numeroNf;
             }
 
-            public float getValor() {
+            public Float getValor() {
                 return valor;
             }
 
-            public void setValor(float valor) {
+            public void setValor(Float valor) {
                 this.valor = valor;
             }
 
@@ -174,7 +175,8 @@ public class Financeiro {
                 this.dataAporte = dataAporte;
             }
 
-            public Aportes(String nome, int numeroNf, float valor, Date dataLancamento, Date dataVencimento, Date dataAporte) {
+            public Aportes(String nome, Integer numeroNf, Float valor, 
+                           Date dataLancamento, Date dataVencimento, Date dataAporte) {
                 setNome(nome);
                 setNumeroNf(numeroNf);
                 setValor(valor);
@@ -189,9 +191,9 @@ public class Financeiro {
 
     public class Despesas {
 
-        private int codigo;
+        private Integer codigo;
         private String nome;
-        private float valor;
+        private Float valor;
         private Date dataVencimento;
 
         public String getNome() {
@@ -202,7 +204,7 @@ public class Financeiro {
             this.nome = nome;
         }
 
-        public float getValor() {
+        public Float getValor() {
             return valor;
         }
 
@@ -227,7 +229,7 @@ public class Financeiro {
 
     public class CentroDeCusto {
 
-        private int codigo;
+        private Integer codigo;
         private String centroDeCusto, tipoCusto;
 
         public String getCentroDeCusto() {
