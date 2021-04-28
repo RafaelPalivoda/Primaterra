@@ -198,7 +198,7 @@ String estado, String pais, String dtFundacao, int enquadFiscal, int tipoContrib
     }
     public void mostraCadastroFisico(){
         System.out.println("Segue dados");
-        System.out.print("O nome do comprador Ã© " + getNome() + "Com cpf " +  getCpf() + ".");
+        System.out.print("O nome do comprador é " + getNome() + "Com cpf " +  getCpf() + ".");
     }
     public void geraCadastroFisico(){
         Scanner teclado = new Scanner(System.in);
