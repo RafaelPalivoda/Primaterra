@@ -20,7 +20,7 @@ public class Cadastro {
         
     }
     public static void main(String[] args) {
-        ConexaoBanco c = new ConexaoBanco("PostgreSql", "localhost", "5432", "sistema", "postgres", "@ABso1904");
+    
     }
     
 }
