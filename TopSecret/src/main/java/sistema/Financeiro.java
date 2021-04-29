@@ -260,4 +260,18 @@ public class Financeiro {
         }
         //-------------------//
     }
+        public class tipoNegociacao {
+        //Atributos Tipo Negociação
+        private String tipoNegociacao;
+
+        public String getTipoNegociacao() {
+            //SELECT FROM TipoNegociacao WHERE TipoNegociacao = this.nome;
+            return tipoNegociacao;
+        }
+
+        public void setTipoNegociacao(String tipoNegociacao) {
+            this.tipoNegociacao = tipoNegociacao;
+        }
+    }
+
 }
