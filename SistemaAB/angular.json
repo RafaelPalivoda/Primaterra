@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProjetoAngular": {
+    "SistemaAB": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ProjetoAngular",
+            "outputPath": "dist/SistemaAB",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ProjetoAngular:build"
+            "browserTarget": "SistemaAB:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ProjetoAngular:build:production"
+              "browserTarget": "SistemaAB:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProjetoAngular:build"
+            "browserTarget": "SistemaAB:build"
           }
         },
         "test": {
@@ -109,16 +109,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ProjetoAngular:serve"
+            "devServerTarget": "SistemaAB:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ProjetoAngular:serve:production"
+              "devServerTarget": "SistemaAB:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ProjetoAngular"
+  "defaultProject": "SistemaAB"
 }
