@@ -249,7 +249,7 @@ public class Cadastro {
                this.isUsuario = isUsuario;
            }
             //---------------------------------//
-           // Método Construtor da Pessoa Fisica
+            // Método Construtor da Pessoa Fisica
         public PessoaFisica(String nome, Integer cpf, Integer rg, String email, Integer cep,
                             String bairro, String logradouro, String cidade, String estado, 
                             String pais, Integer numeroImovel) {
