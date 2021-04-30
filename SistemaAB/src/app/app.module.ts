@@ -6,6 +6,9 @@ import { PaginaLoginComponent } from './pagina-login/pagina-login.component';
 import { LoginHeaderComponent } from './pagina-login/login-header/login-header.component';
 import { LoginFooterComponent } from './pagina-login/login-footer/login-footer.component';
 import { LoginAppComponent } from './pagina-login/login-app/login-app.component';
+import { PainelUserComponent } from './painel-user/painel-user.component';
+import { HeaderPainelComponent } from './painel-user/header-painel/header-painel.component';
+import { CadastrarEntidadeComponent } from './painel-user/cadastrar-entidade/cadastrar-entidade.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { LoginAppComponent } from './pagina-login/login-app/login-app.component'
     PaginaLoginComponent,
     LoginHeaderComponent,
     LoginFooterComponent,
-    LoginAppComponent
+    LoginAppComponent,
+    PainelUserComponent,
+    HeaderPainelComponent,
+    CadastrarEntidadeComponent
   ],
   imports: [
     BrowserModule
