@@ -6,6 +6,10 @@ import { PaginaLoginComponent } from './pagina-login/pagina-login.component';
 import { LoginHeaderComponent } from './pagina-login/login-header/login-header.component';
 import { LoginFooterComponent } from './pagina-login/login-footer/login-footer.component';
 import { LoginAppComponent } from './pagina-login/login-app/login-app.component';
+import { PainelUsuarioComponent } from './painel-usuario/painel-usuario.component';
+import { RouterModule } from '@angular/router';
+import appRoutes from './routerConfig';
+
 
 @NgModule({
   declarations: [
@@ -13,10 +17,12 @@ import { LoginAppComponent } from './pagina-login/login-app/login-app.component'
     PaginaLoginComponent,
     LoginHeaderComponent,
     LoginFooterComponent,
-    LoginAppComponent
+    LoginAppComponent,
+    PainelUsuarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
