@@ -1,0 +1,17 @@
+.row {
+    margin-bottom: auto;
+}
+
+div {
+    color: white;
+}
+
+p {
+    font-size: 11px;
+    margin: 0px 5px 0px 5px;
+}
+
+hr {
+    border-color: grey;
+    margin: 0 5px 0 5px;
+}
