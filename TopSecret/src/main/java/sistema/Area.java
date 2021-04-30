@@ -11,36 +11,34 @@ package sistema;
 */
 public class Area {
     //Atributos da Area.
-    private float metragemInicial, metragemFinal, valorInicial, valorFinal, valorMetroFinal , valorMetroInicial, porcentagemAproveitamento, porcentagemConvertida;
-    private int qtdadeLotes;
-    private String observacao;
-
-    
+    private Float metragemInicial, metragemFinal, valorInicial, valorFinal, valorMetroFinal , valorMetroInicial, porcentagemAproveitamento, porcentagemConvertida;
+    private Integer qtdadeLotes;
+    private String observacao, nomeArea;
     //Metodos Get e Set Metragem Inicial do terreno.
-    public float getMetragemInicial() {
+    public Float getMetragemInicial() {
         return metragemInicial;
     }
 
-    public void setMetragemInicial(float metragemInicial) {
+    public void setMetragemInicial(Float metragemInicial) {
         this.metragemInicial = metragemInicial;
     }
     //Metodos Get e Set da Metragem que será aproveitada.
-    public float getMetragemFinal() {
+    public Float getMetragemFinal() {
         return metragemFinal;
     }
 
-    public void setMetragemFinal(float metragemFinal) {
+    public void setMetragemFinal(Float metragemFinal) {
         this.metragemFinal = metragemFinal;
     }
     // Métodos Get e Set do valor investido inicialmente no terreno
-    public void setValorInicial(float valorInicial){
+    public void setValorInicial(Float valorInicial){
         this.valorInicial = valorInicial;
     }
-    public float getValorInicial(){
+    public Float getValorInicial(){
         return valorInicial;
     }
     // Método que traz o valor do metro quadrado inicial
-    public float getValorMetroInicial() {
+    public Float getValorMetroInicial() {
         return valorMetroInicial;
     }
     /*Métodos Calcula valor inicial do metro quadrado
@@ -50,7 +48,7 @@ public class Area {
         this.valorMetroInicial = valorInicial / metragemInicial;
     }
     
-    public float getValorMetroFinal() {
+    public Float getValorMetroFinal() {
         return valorMetroFinal;
     }
     //Transformar a porcentagem em float
@@ -65,11 +63,11 @@ public class Area {
         this.valorMetroFinal = valorInicial / metragemFinal;
     }
     // Métodos Get e Set da quantidade prevista de lotes do terreno.
-    public int getQtdadeLotes() {
+    public Integer getQtdadeLotes() {
         return qtdadeLotes;
     }
 
-    public void setQtdadeLotes(int qtdadeLotes) {
+    public void setQtdadeLotes(Integer qtdadeLotes) {
         this.qtdadeLotes = qtdadeLotes;
     }
     //Métodos Get e Set do campo Observação.
@@ -81,64 +79,58 @@ public class Area {
         this.observacao = observacao;
     }
     // Métodos que definem a porcentagem do aproveitamento digitada pelo usuário
-    public float getPorcentagemAproveitamento() {
+    public Float getPorcentagemAproveitamento() {
         return porcentagemAproveitamento;
     }
 
-    public void setPorcentagemAproveitamento(float porcentagemAproveitamento) {
+    public void setPorcentagemAproveitamento(Float porcentagemAproveitamento) {
         this.porcentagemAproveitamento = porcentagemAproveitamento;
     }
-
-    public Area(float metragemInicial, float valorInicial, float porcentagemAproveitamento, int qtdadeLotes, String observacao) {
-        this.metragemInicial = metragemInicial;
-        this.valorInicial = valorInicial;
-        this.porcentagemAproveitamento = porcentagemAproveitamento;
-        this.qtdadeLotes = qtdadeLotes;
-        this.observacao = observacao;
+    //Metodos Getter e Setter que definem o nomeda Area
+    public String getNomeArea(){
+        return nomeArea;
+    }
+    
+    public void setNomeArea(String nomeArea){
+        this.nomeArea = nomeArea;
+    }
+    public Area(String nomeArea, Float metragemInicial, Float valorInicial, Float porcentagemAproveitamento,
+                Integer qtdadeLotes, String observacao) {
+        setNomeArea(nomeArea);
+        setMetragemInicial(metragemInicial);
+        setValorInicial(valorInicial);
+        setPorcentagemAproveitamento(porcentagemAproveitamento);
+        setQtdadeLotes(qtdadeLotes);
+        setObservacao(observacao);
     }
     // Classe para cadastro e calculo de permuta
     public class Permuta {
-        private float porcentagemPermuta, valorPermuta;
-        private int quantidade;
-
-        public float getPorcentagemPermuta() {
+        //Atributos Permuta
+        private Float porcentagemPermuta, valorPermuta;
+        //Getter e Setter...
+        public Float getPorcentagemPermuta() {
             return porcentagemPermuta;
         }
 
-        public void setPorcentagemPermuta(float porcentagemPermuta) {
+        public void setPorcentagemPermuta(Float porcentagemPermuta) {
             this.porcentagemPermuta = porcentagemPermuta;
         }
 
-        public float getValorPermuta() {
+        public Float getValorPermuta() {
             return valorPermuta;
         }
 
-        public void setValorPermuta(float valorPermuta) {
+        public void setValorPermuta(Float valorPermuta) {
             this.valorPermuta = valorPermuta;
         }
-
-        public int getQuantidade() {
-            return quantidade;
-        }
-
-        public void setQuantidade(int quantidade) {
-            this.quantidade = quantidade;
-        }
-
-        public Permuta(float porcentagemPermuta, float valorPermuta, int quantidade) {
-            setPorcentagemPermuta(porcentagemPermuta);
-            setValorPermuta(valorPermuta);
-            setQuantidade(quantidade);
-        }
-
+        //----------------------------------------//
     }
 
     public class Empreendimento {
-
-        private int codigo, codigoIncorporadores;
+        //Atributos Empreendimento
         private String nomeEmpreendimento;
-        private float custoPrevisto, custoEfetivo, custoTotal;
-
+        private Float custoPrevisto, custoEfetivo, custoTotal;
+        //Getter e Setter..
         public String getNomeEmpreendimento() {
             return nomeEmpreendimento;
         }
@@ -147,111 +139,60 @@ public class Area {
             this.nomeEmpreendimento = nomeEmpreendimento;
         }
 
-        public float getCustoPrevisto() {
+        public Float getCustoPrevisto() {
             return custoPrevisto;
         }
 
-        public void setCustoPrevisto(float custoPrevisto) {
+        public void setCustoPrevisto(Float custoPrevisto) {
             this.custoPrevisto = custoPrevisto;
         }
 
-        public float getCustoEfetivo() {
+        public Float getCustoEfetivo() {
             return custoEfetivo;
         }
 
-        public void setCustoEfetivo(float custoEfetivo) {
+        public void setCustoEfetivo(Float custoEfetivo) {
             this.custoEfetivo = custoEfetivo;
         }
-
-        public float custoTotal() {
-            return custoPrevisto - custoEfetivo;
+        //-----------------------------------------------//
+        /*Método que calcula o Custo Total do Empreendimento
+        * Custo Previsto - Custo Efetivo do empreendimento
+        */
+        public void setCustoTotal() {
+            this.custoTotal = this.custoPrevisto - this.custoEfetivo;
         }
-
-        public Empreendimento(String nomeEmpreendimento, float custoPrevisto, float custoEfetivo) {
+        //Método Contrutor Empreendimento
+        public Empreendimento(String nomeEmpreendimento, Float custoPrevisto, Float custoEfetivo) {
             setNomeEmpreendimento(nomeEmpreendimento);
             setCustoPrevisto(custoPrevisto);
             setCustoEfetivo(custoEfetivo);
         }
-
     }
+    public class TipoProjetos {
+        //Atributos Tipo Projetos
+        private String tipoProjeto;
 
-    public class Etapas {
-
-        private int codigo;
-        public String nome;
-
-        public String getNome() {
-            return nome;
+        public String getTipoProjeto() {
+            //SELECT FROM TipoProjeto WHERE tipoProjeto = this.nome;
+            return tipoProjeto;
         }
 
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setTipoProjeto(String tipoProjeto) {
+            //INSERT INTO TipoProjeto (tipoProjeto);
+            this.tipoProjeto = tipoProjeto;
         }
-
-        
-        public void gerarEtapa(){
-            
-        }
-        
-        public void statusEtapa(){
-        
     }
-
-    public class Incorporadores {
-
-        private String nome;
-        private int codigoIncorporadores, qtdadeLotes;
-        private float porcentagemRateio, porcentagemPermuta;
-
-        public String getNome() {
-            return nome;
+    public class Etapas{
+        //Atributos Etapas
+        private String etapa;
+        //Métodos Getter e Setter
+        public String getEtapa() {
+            //SELECT FROM Etapa WHERE nomeEtapa = this.etapa
+            return etapa;
         }
-
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setEtapa(String etapa) {
+            //INSERT INTO Etapa (nomeEtapa);
+            this.etapa = etapa;
         }
-
-        public float getPorcentagemRateio() {
-            return porcentagemRateio;
-        }
-
-        public void setPorcentagemRateio(float porcentagemRateio) {
-            this.porcentagemRateio = porcentagemRateio;
-        }
-
-        public float getPorcentagemPermuta() {
-            return porcentagemPermuta;
-        }
-
-        public void setPorcentagemPermuta(float porcentagemPermuta) {
-            this.porcentagemPermuta = porcentagemPermuta;
-        }
-
-        public int getQtdadeLotes() {
-            return qtdadeLotes;
-        }
-
-        public void setQtdadeLotes(int qtdadeLotes) {
-            this.qtdadeLotes = qtdadeLotes;
-        }
-
-        public void gerarRateio() {
-
-        }
-
-        public void gerarIncorporador() {
-
-        }
-
-        public Incorporadores(String nome, int qtdadeLotes, float porcentagemRateio, float porcentagemPermuta) {
-            setNome(nome);
-            setQtdadeLotes(qtdadeLotes);
-            setPorcentagemRateio(porcentagemRateio);
-            setPorcentagemPermuta(porcentagemPermuta);
-        }
-        
-        
     }
-
-}
 }

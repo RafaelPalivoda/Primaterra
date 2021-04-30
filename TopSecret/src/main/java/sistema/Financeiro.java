@@ -17,9 +17,7 @@ public class Financeiro {
     public String getTipoNegociacao() {
         //getTipoNegociacao -> SELECT FROM TipoNegociacao WHERE TipoNegociacao = this.tipoNegociacao;
         return tipoNegociacao;
-        //Trazer do Banco de dados
     }
-
     public void setTipoNegociacao(String tipoNegociacao) {
         //setTipoNegociacao -> INSERT INTO TipoNegociacao (TipoNegociacao);
         this.tipoNegociacao = tipoNegociacao;
@@ -81,7 +79,7 @@ public class Financeiro {
         private Float valorNota, valorRateio;
         private Byte rateio;
         //-----------------------------//
-//Métodos Getter e Stter...
+        //Métodos Getter e Stter...
         public String getNome() {
             //getNome -> SELECT FROM ContasPagar WHERE nomeContaPagar = this.nome;
             return nome;
@@ -238,7 +236,6 @@ public class Financeiro {
             // INSERT INTO Despesas (descricaoDespesas)
             this.descricaoSaida = descricaoSaida;
         }
-        
         //--------------------------------------//
         //Métodos especiais Plano de Contas
         // Entrada de receitas...
@@ -273,5 +270,4 @@ public class Financeiro {
             this.tipoNegociacao = tipoNegociacao;
         }
     }
-
 }
