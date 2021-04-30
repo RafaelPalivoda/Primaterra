@@ -257,7 +257,7 @@ public class Financeiro {
         }
         //-------------------//
     }
-        public class tipoNegociacao {
+    public class tipoNegociacao {
         //Atributos Tipo Negociação
         private String tipoNegociacao;
 
@@ -267,6 +267,7 @@ public class Financeiro {
         }
 
         public void setTipoNegociacao(String tipoNegociacao) {
+            //INSERT INTO TipoNegociacao WHERE tipoNegociacao = this.tipoNegociacao
             this.tipoNegociacao = tipoNegociacao;
         }
     }
