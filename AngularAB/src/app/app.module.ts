@@ -7,8 +7,7 @@ import { LoginHeaderComponent } from './pagina-login/login-header/login-header.c
 import { LoginFooterComponent } from './pagina-login/login-footer/login-footer.component';
 import { LoginAppComponent } from './pagina-login/login-app/login-app.component';
 import { PainelUsuarioComponent } from './painel-usuario/painel-usuario.component';
-import { RouterModule } from '@angular/router';
-import appRoutes from './routerConfig';
+
 
 
 @NgModule({
@@ -21,8 +20,7 @@ import appRoutes from './routerConfig';
     PainelUsuarioComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
