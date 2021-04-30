@@ -10,250 +10,268 @@ package sistema;
 */
 import java.util.Date;
 public class Financeiro {
-    public class PlanoDeContas extends Financeiro {
+// Atributos classe Financeiro...
+    private String tipoNegociacao;
+    //--------------------------------//
+    //Métodos Getter e Setter...
+    public String getTipoNegociacao() {
+        //getTipoNegociacao -> SELECT FROM TipoNegociacao WHERE TipoNegociacao = this.tipoNegociacao;
+        return tipoNegociacao;
+        //Trazer do Banco de dados
+    }
+
+    public void setTipoNegociacao(String tipoNegociacao) {
+        //setTipoNegociacao -> INSERT INTO TipoNegociacao (TipoNegociacao);
+        this.tipoNegociacao = tipoNegociacao;
+        //Enviar para o banco de dados
+    }
+    //-------------------------------//
+    public class CentroCusto{
+        //Atributos classe Centro de Custo
+        private String nome;
+        private Float previsto, efetivo, total;
+        //---------------------------//
+        //Métodos Getter e Setter
+        public String getNome() {
+            //getNome -> SELECT FROM CentroCusto WHERE nomeCentro = this.nome;
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            //setNome -> INSERT INTO CentroCusto (nomeCentro);
+            this.nome = nome;
+        }
+
+        public Float getPrevisto() {
+            //getPrevisto -> SELECT FROM * WHERE * = *;
+            return previsto;
+        }
+
+        public void setPrevisto(Float previsto) {
+            //setPrevisto -> INSERT INTO * (*);
+            this.previsto = previsto;
+        }
+
+        public Float getEfetivo() {
+            //getEfetivo -> SELECT FROM * WHERE * = *;
+            return efetivo;
+        }
+
+        public void setEfetivo(Float efetivo) {
+            //setEfetivo -> INSERT INTO * (*);
+            this.efetivo = efetivo;
+        }
+
+        public Float getTotal() {
+            //getTotal -> SELECT FROM * WHERE * = *;
+            return total;
+        }
+
+        public void setTotal(Float total) {
+            //setTotal -> INSERT INTO * (*);
+            this.total = total;
+        }
+        //-------------------------------//
+    }
+    public class ContasPagar{
+        //Atributos classe Contas a pagar...
+        private String nome, empreendimento, planoContas, centroCusto, incorporadora;
+        private Integer numeroNf;
+        private Date dtVencimento;
+        private Float valorNota, valorRateio;
+        private Byte rateio;
+        //-----------------------------//
+//Métodos Getter e Stter...
+        public String getNome() {
+            //getNome -> SELECT FROM ContasPagar WHERE nomeContaPagar = this.nome;
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            //INSERT INTO ContasPagar (nomeContasPagar);
+            this.nome = nome;
+        }
+
+        public Integer getNumeroNf() {
+            //getNumeroNf -> SELECT FROM Contaspagar WHERE numeroNf = this.numeroNf;
+            return numeroNf;
+        }
+
+        public void setNumeroNf(Integer numeroNf) {
+            //INSERT INTO ContasPagar (numeroNf);
+            this.numeroNf = numeroNf;
+        }
+
+        public Date getDtVencimento() {
+            //getDtVencimento -> SELECT FROM Contaspagar WHERE dtVencimento = this.dtVencimento;
+            return dtVencimento;
+        }
+
+        public void setDtVencimento(Date dtVencimento) {
+            //INSERT INTO ContasPagar (dtVencimento);
+            this.dtVencimento = dtVencimento;
+        }
+
+        public Float getValorNota() {
+            //getValorNota -> SELECT FROM Contaspagar WHERE valorNota = this.valorNota;
+            return valorNota;
+        }
+
+        public void setValorNota(Float valorNota) {
+            //INSERT INTO ContasPagar (valorNota);
+            this.valorNota = valorNota;
+        }
+
+        public String getEmpreendimento() {
+            //getEmpreendimento -> SELECT FROM Empreendimento WHERE nomeEmpreendimento = this.empreendimento;
+            return empreendimento;
+        }
+
+        public void setEmpreendimento(String empreendimento) {
+            //INSERT INTO Empreendimento (nomeEmpreendimento);
+            this.empreendimento = empreendimento;
+        }
+
+        public String getPlanoContas() {
+            //getPlanoContas -> SELECT FROM PlanoContas WHERE nomePlano = this.planoContas;
+            return planoContas;
+        }
+
+        public void setPlanoContas(String planoContas) {
+            //INSERT INTO PlanoContas (nomePlano);
+            this.planoContas = planoContas;
+        }
+
+        public String getCentroCusto() {
+            //getCentroCusto -> SELECT FROM CentroCusto WHERE nomeCentro = this.centroCusto;
+            return centroCusto;
+        }
+
+        public void setCentroCusto(String centroCusto) {
+            //INSERT INTO CentroCusto (nomeCentro);
+            this.centroCusto = centroCusto;
+        }
+
+        public String getIncorporadora() {
+            //getIncorporadora -> SELECT FROM Entidade WHERE nome = this.incorporadora;
+            return incorporadora;
+        }
+
+        public void setIncorporadora(String incorporadora) {
+            //setIncorporadora -> INSERT INTO Contasapagar(IdEntidade); 
+            this.incorporadora = incorporadora;
+        }
+
+        public Float getValorRateio() {
+            //getValorrateio -> SELECT FROM Contaspagar WHERE valorRateio = this.valorRateio;
+            return valorRateio;
+        }
+
+        public void setValorRateio(Float valorRateio) {
+            //INSERT INTO ContasPagar (valorRateio);
+            this.valorRateio = valorRateio;
+        }
+
+        public Byte getRateio() {
+            //getRateio -> SELECT FROM Contaspagar WHERE rateio = this.rateio;
+            return rateio;
+        }
+
+        public void setRateio(Byte rateio) {
+            //INSERT INTO ContasPagar (rateio);
+            this.rateio = rateio;
+        }
+        //--------------------------//
+    }
+    public class PlanoContas{
+        //Atributos Plano de Contas...
+        private String nome, descricaoEntrada, descricaoSaida;
+        private Integer entrada, saida;
+        //---------------------------//
+        //Métodos Getter e Setter...
+        public String getNome() {
+            //getNome -> SELECT FROM PlanoContas WHERE nomePlano = this.nome;
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            // INSERT INTO PlanoContas (nomePlano);
+            this.nome = nome;
+        }
+
+        public Integer getEntrada() {
+            //getEntrada -> SELECT FROM Receitas WHERE valorEntrada = this.entrada;
+            return entrada;
+        }
+
+        public void setEntrada(Integer entrada) {
+            // INSERT INTO Receitas (valorEntrada);
+            this.entrada = entrada;
+        }
+
+        public Integer getSaida() {
+            //getSaida -> SELECT FROM Despesas WHERE valorSaida = this.saida;
+            return saida;
+        }
+
+        public void setSaida(Integer saida) {
+            // INSERT INTO Despesas (valorSaida);
+            this.saida = saida;
+        }
         
-        private Integer codigoReceita, codigoDespesa;
-
-
-        public void calcularLucro() {
-            
+        public String getDescricaoEntrada() {
+            //getDescricaoEntrada -> SELECT FROM Receitas WHERE descricaoReceitas = this.descricaoEntrada;
+            return descricaoEntrada;
         }
 
-        public void totalReceita() {
-
+        public void setDescricaoEntrada(String descricaoEntrada) {
+            // INSERT INTO Receitas (valorEntrada);
+            this.descricaoEntrada = descricaoEntrada;
         }
 
-        public void totalDespesas() {
-
+        public String getDescricaoSaida() {
+            //getDescricaoSaida -> SELECT FROM Despesas WHERE descricaoDespesa = this.descricaoSaida;
+            return descricaoSaida;
         }
 
-    } // fim da classe plano de contas
+        public void setDescricaoSaida(String descricaoSaida) {
+            // INSERT INTO Despesas (descricaoDespesas)
+            this.descricaoSaida = descricaoSaida;
+        }
+        
+        //--------------------------------------//
+        //Métodos especiais Plano de Contas
+        // Entrada de receitas...
+        public void receitas(){
+            //Entrada -> INSERT INTO Receitas(valorEntrada)
+            setEntrada(entrada);
+            //descricaoEntrada -> INSERT INTO Receitas(descricaoReceita)
+            setDescricaoEntrada(descricaoEntrada);
+            //Códgio INSERT aqui, será incluído após conexao com o bd
+        }
+        //---------------------//
+        //Entrada de despesas...
+        public void despesas(){
+            //Saida -> INSERT INTO Despesa(valorDespesa)
+            setSaida(saida);
+            //descricaoEntrada -> INSERT INTO Receitas(descricaoReceita)
+            setDescricaoSaida(descricaoSaida);
+            //Códgio INSERT aqui, será incluído após conexao com o bd
+        }
+        //-------------------//
+    }
+        public class tipoNegociacao {
+        //Atributos Tipo Negociação
+        private String tipoNegociacao;
 
-    public class Receitas {
-
-        private Integer codigo;
-        private String nome;
-        private Double valor, receita;
-        private Date dataRecebimento;
-
-        public String getNome() {
-            return nome;
+        public String getTipoNegociacao() {
+            //SELECT FROM TipoNegociacao WHERE TipoNegociacao = this.nome;
+            return tipoNegociacao;
         }
 
-        public void setNome(String nome) {
-            this.nome = nome;
+        public void setTipoNegociacao(String tipoNegociacao) {
+            this.tipoNegociacao = tipoNegociacao;
         }
+    }
 
-        public Double getValor() {
-            return valor;
-        }
-
-        public void setValor(Double valor) {
-            this.valor = valor;
-        }
-
-        public Date getDataRecebimento() {
-            return dataRecebimento;
-        }
-
-        public void setDataRecebimento(Date dataRecebimento) {
-            this.dataRecebimento = dataRecebimento;
-        }
-
-        public class Antecipacao {
-
-            private Integer codigo, lote;
-            private Date dataVenda, dataAporte;
-            private Float valorMetragem, metragem, valorTotal;
-
-            public int getLote() {
-                return lote;
-            }
-
-            public void setLote(Integer lote) {
-                this.lote = lote;
-            }
-
-            public Date getDataVenda() {
-                return dataVenda;
-            }
-
-            public void setDataVenda(Date dataVenda) {
-                this.dataVenda = dataVenda;
-            }
-
-            public Float getValorMetragem() {
-                return valorMetragem;
-            }
-
-            public void setValorMetragem(Float valorMetragem) {
-                this.valorMetragem = valorMetragem;
-            }
-
-            public Float getMetragem() {
-                return metragem;
-            }
-
-            public void setMetragem(Float metragem) {
-                this.metragem = metragem;
-            }
-
-            public Date getDataAporte() {
-                return dataAporte;
-            }
-
-            public void setDataAporte(Date dataAporte) {
-                this.dataAporte = dataAporte;
-            }
-
-            public void calcularValorTotal() {
-                valorTotal = metragem * valorMetragem;
-            }
-
-            public Antecipacao(Integer lote, Date dataVenda, 
-                               Float valorMetragem, Float metragem, Date dataAporte) {
-                setLote(lote);
-                setDataVenda(dataVenda);
-                setValorMetragem(valorMetragem);
-                setMetragem(metragem);
-                setDataAporte(dataAporte);
-            }
-        } // fim classe antecipacao
-
-        public class Aportes {
-
-            private String nome;
-            private Integer numeroNf;
-            private Float valor;
-            private Date dataLancamento, dataVencimento, dataAporte;
-
-            public String getNome() {
-                return nome;
-            }
-
-            public void setNome(String nome) {
-                this.nome = nome;
-            }
-
-            public Integer getNumeroNf() {
-                return numeroNf;
-            }
-
-            public void setNumeroNf(Integer numeroNf) {
-                this.numeroNf = numeroNf;
-            }
-
-            public Float getValor() {
-                return valor;
-            }
-
-            public void setValor(Float valor) {
-                this.valor = valor;
-            }
-
-            public Date getDataLancamento() {
-                return dataLancamento;
-            }
-
-            public void setDataLancamento(Date dataLancamento) {
-                this.dataLancamento = dataLancamento;
-            }
-
-            public Date getDataVencimento() {
-                return dataVencimento;
-            }
-
-            public void setDataVencimento(Date dataVencimento) {
-                this.dataVencimento = dataVencimento;
-            }
-
-            public Date getDataAporte() {
-                return dataAporte;
-            }
-
-            public void setDataAporte(Date dataAporte) {
-                this.dataAporte = dataAporte;
-            }
-
-            public Aportes(String nome, Integer numeroNf, Float valor, 
-                           Date dataLancamento, Date dataVencimento, Date dataAporte) {
-                setNome(nome);
-                setNumeroNf(numeroNf);
-                setValor(valor);
-                setDataLancamento(dataLancamento);
-                setDataVencimento(dataVencimento);
-                setDataAporte(dataAporte);
-            }
-
-        } // fim da classe aportes
-
-    } // fim da classe receitas
-
-    public class Despesas {
-
-        private Integer codigo;
-        private String nome;
-        private Float valor;
-        private Date dataVencimento;
-
-        public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public Float getValor() {
-            return valor;
-        }
-
-        public void setValor(float valor) {
-            this.valor = valor;
-        }
-
-        public Date getDataVencimento() {
-            return dataVencimento;
-        }
-
-        public void setDataVencimento(Date dataVencimento) {
-            this.dataVencimento = dataVencimento;
-        }
-
-        public Despesas(String nome, float valor, Date dataVencimento) {
-            setNome(nome);
-            setValor(valor);
-            setDataVencimento(dataVencimento);
-        }
-    } // fim da classe despesas
-
-    public class CentroDeCusto {
-
-        private Integer codigo;
-        private String centroDeCusto, tipoCusto;
-
-        public String getCentroDeCusto() {
-            return centroDeCusto;
-        }
-
-        public void setCentroDeCusto(String centroDeCusto) {
-            this.centroDeCusto = centroDeCusto;
-        }
-
-        public String getTipoCusto() {
-            return tipoCusto;
-        }
-
-        public void setTipoCusto(String tipoCusto) {
-            this.tipoCusto = tipoCusto;
-        }
-
-        public CentroDeCusto() {
-        }
-
-        public CentroDeCusto(String centroDeCusto, String tipoCusto) {
-            setCentroDeCusto(centroDeCusto);
-            setTipoCusto(tipoCusto);
-        }
-    } // fim da classe centro de custo
 }
