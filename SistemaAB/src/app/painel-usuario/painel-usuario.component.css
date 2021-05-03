@@ -1,9 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url(https://fonts.googleapis.com/css2?family=Montserrat);
 .box {
     border-color: #010046;
     border: 1px 2px black;
     box-shadow: 0px 0px 15px cadetblue;
     border-radius: 3px;
+}
+
+a {
+    font-weight: bold;
 }
 
 .jumbotron {
