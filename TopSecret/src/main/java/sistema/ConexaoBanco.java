@@ -9,7 +9,7 @@ package sistema;
 *   Coordenação de: Alexsandro Barboza
 */
 import java.sql.*;
-public class ConexaoBanco {
+public class ConexaoBanco{
     private String local, user, senha, str_conexao, driverjdbc;
     private Connection c;
     private Statement statement;

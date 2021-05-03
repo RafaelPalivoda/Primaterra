@@ -212,12 +212,11 @@ public class Cadastro {
             setDtFundacao(dtFundacao);
             setEnquadFiscal(enquadFiscal);
             setTipoContribuinte(tipoContribuinte);
-        }
+            }
         }
         public class PessoaFisica extends Entidade{
             //Atributos Pessoa Fisica extende  os atributos da Entidade
             private Integer cpf, rg;
-            private Boolean isUsuario;
             //Métodos Getter e Setter...
            public Integer getCpf() {
                //getCpf -> SELECT FROM Entidade WHERE cpfCnpj = this.cpf;
@@ -238,18 +237,8 @@ public class Cadastro {
                //INSERT INTO Entidade (rg);
                this.rg = rg;
            }
-
-           public Boolean getIsUsuario() {
-               //getIsUsuario -> SELECT FROM Entidade WHERE isUsuario = this.isUsuario;
-               return isUsuario;
-           }
-
-           public void setIsUsuario(Boolean isUsuario) {
-               //INSERT INTO Entidade (isUsuario);
-               this.isUsuario = isUsuario;
-           }
             //---------------------------------//
-           // Método Construtor da Pessoa Fisica
+            // Método Construtor da Pessoa Fisica
         public PessoaFisica(String nome, Integer cpf, Integer rg, String email, Integer cep,
                             String bairro, String logradouro, String cidade, String estado, 
                             String pais, Integer numeroImovel) {
@@ -267,5 +256,18 @@ public class Cadastro {
             setNumeroImovel(numeroImovel);
         }
       }
+        public class TipoEntidade{
+            //Atributos Tipo Entidade
+            private String tipoEntidade;
+            //Getter e Setter TipoEntidade..
+            public String getTipoEntidade() {
+               return tipoEntidade;
+            }
+
+            public void setTipoEntidade(String tipoEntidade) {
+               this.tipoEntidade = tipoEntidade;
+            }
+            //-------------------------------//
+        }
    }
 }
