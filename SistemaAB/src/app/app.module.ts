@@ -1,22 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PaginaLoginComponent } from './pagina-login/pagina-login.component';
-import { LoginHeaderComponent } from './pagina-login/login-header/login-header.component';
-import { LoginFooterComponent } from './pagina-login/login-footer/login-footer.component';
-import { LoginAppComponent } from './pagina-login/login-app/login-app.component';
+import { PainelUsuarioComponent } from './painel-usuario/painel-usuario.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaginaLoginComponent,
-    LoginHeaderComponent,
-    LoginFooterComponent,
-    LoginAppComponent
+    PainelUsuarioComponent,
+    NotFoundComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: PaginaLoginComponent
+      },
+      {
+        path: 'painel-usuario',
+        component: PainelUsuarioComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

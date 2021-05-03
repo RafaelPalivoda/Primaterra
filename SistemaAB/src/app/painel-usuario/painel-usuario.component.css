@@ -21,7 +21,7 @@
     background-color: #010046;
     color: white;
     margin-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .fixedbutton {
@@ -29,10 +29,6 @@
     bottom: 0px;
     right: 0px;
     font-size: 11px;
-}
-
-.avisos {
-    font-size: 12px;
 }
 
 label {
@@ -47,10 +43,9 @@ body {
     background-image: url(../../assets/images/background.png);
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
-.row {
-    padding-bottom: 25px;
+.jumbotron {
+    background-size: cover;
+    background-repeat: no-repeat;
 }
