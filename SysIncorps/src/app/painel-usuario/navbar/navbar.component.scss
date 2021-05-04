@@ -1,0 +1,15 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+mat-tab-group {
+    box-shadow: 0px 0px 5px rgb(11, 42, 170);
+    border-radius: 5px;
+}
+
+mat-tab {
+    color: white;
+}

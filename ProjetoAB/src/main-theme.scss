@@ -1,7 +1,0 @@
-@import '~@angular/material/theming';
-@include mat-core();
-$main-theme-primary: mat-palette($mat-indigo);
-$main-theme-accent: mat-palette($mat-gray, A200, A100, A400);
-$main-theme-warn: mat-palette($mat-red);
-$main-theme-: mat-light-theme(( color: ( primary: $main-theme-primary, accent: $main-theme-accent, warn: $main-theme-warn, )));
-@include angular-material-theme($main-theme);
