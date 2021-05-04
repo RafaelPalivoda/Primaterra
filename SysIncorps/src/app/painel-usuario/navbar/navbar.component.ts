@@ -1,3 +1,4 @@
+import { CadastrarEntidadeComponent } from './../cadastrar-entidade/cadastrar-entidade.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  items: string[] = ['Cadastrar pessoa física', 'Cadastrar pessoa jurídica'];
+  public show: boolean = false;
+  public buttonName: string = 'Show';
+
+  toggle() {
+    this.show = !this.show;
+
+    if (this.show)
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+  }
 
   constructor() { }
 

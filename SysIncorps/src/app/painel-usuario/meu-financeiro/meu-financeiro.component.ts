@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meu-financeiro.component.scss']
 })
 export class MeuFinanceiroComponent implements OnInit {
-
+  financeiroMegaMenu: string[] = [
+    'Plano de contas',
+    'Contas a pagar',
+    'Aportes',
+    'Antecipação de receitas  '
+  ];
   constructor() { }
 
   ngOnInit(): void {

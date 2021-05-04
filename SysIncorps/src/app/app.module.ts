@@ -19,6 +19,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CadastrarEntidadeComponent } from './painel-usuario/cadastrar-entidade/cadastrar-entidade.component';
 import { MinhasAreasComponent } from './painel-usuario/minhas-areas/minhas-areas.component';
 import { MeuFinanceiroComponent } from './painel-usuario/meu-financeiro/meu-financeiro.component';
+import { MatListModule } from '@angular/material/list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { MeuFinanceiroComponent } from './painel-usuario/meu-financeiro/meu-fina
     MatCheckboxModule,
     MatSelectModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatListModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

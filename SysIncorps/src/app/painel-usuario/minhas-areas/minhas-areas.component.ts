@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./minhas-areas.component.scss']
 })
 export class MinhasAreasComponent implements OnInit {
-
+  areaMegaMenu: string[] = [
+    'Areas',
+    'Empreendimentos',
+    'Permutas'
+  ];
   constructor() { }
 
   ngOnInit(): void {
