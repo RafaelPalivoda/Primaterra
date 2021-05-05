@@ -1,0 +1,7 @@
+<mat-selection-list #shoes [multiple]="false">
+    <div mat-subheader>GERENCIAR CADASTROS</div>
+    <mat-divider></mat-divider>
+    <mat-list-option *ngFor="let item of cadastrarMegaMenu" [value]="shoe">
+        {{item}}
+    </mat-list-option>
+</mat-selection-list>
