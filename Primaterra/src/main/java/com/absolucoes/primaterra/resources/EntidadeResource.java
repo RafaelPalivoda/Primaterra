@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -22,13 +23,14 @@ import com.absolucoes.primaterra.services.EntidadeService;
 
 @RestController
 @RequestMapping(value="/entidade")
+@CrossOrigin("http://localhost:4200")
 public class EntidadeResource {
 
 	@Autowired
 	private EntidadeService service;
 	
 	@GetMapping(value="/{id}")
-	public ResponseEntity<Entidade> findById(@PathVariable Integer id){
+	public ResponseEntity<Entidade> findById(@PathVariable Long id){
 		Entidade obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
@@ -45,12 +47,12 @@ public class EntidadeResource {
 		return ResponseEntity.created(uri).build();
 	}
 	@PatchMapping(value="/{id}")
-	public ResponseEntity<EntidadeDTO> update(@PathVariable Integer id, @RequestBody EntidadeDTO objDTO){
+	public ResponseEntity<EntidadeDTO> update(@PathVariable Long id, @RequestBody EntidadeDTO objDTO){
 		Entidade newObj = service.update(id ,objDTO);
 		return ResponseEntity.ok().body(new EntidadeDTO(newObj));
 	}
 	@DeleteMapping(value="/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Integer id){
+	public ResponseEntity<Void> delete(@PathVariable Long id){
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}

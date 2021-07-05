@@ -18,7 +18,7 @@ public class EntidadeService {
 	@Autowired
 	private EntidadeRepository repository;
 
-	public Entidade findById(Integer id) {
+	public Entidade findById(Long id) {
 		Optional<Entidade> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Entidade não encontrado!"));
 	}
@@ -32,7 +32,7 @@ public class EntidadeService {
 		return repository.save(obj);
 	}
 
-	public Entidade update(Integer id, EntidadeDTO objDTO) {
+	public Entidade update(Long id, EntidadeDTO objDTO) {
 		Entidade obj = findById(id);
 		obj.setNome(objDTO.getNome());
 		obj.setCnpj(objDTO.getCnpj());
@@ -54,7 +54,7 @@ public class EntidadeService {
 		return repository.save(obj);
 	}
 
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		findById(id);
 		try {
 			repository.deleteById(id);

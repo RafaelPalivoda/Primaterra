@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.absolucoes.primaterra.domains.Entidade;
 
 @Repository
-public interface EntidadeRepository extends JpaRepository<Entidade, Integer>{
+public interface EntidadeRepository extends JpaRepository<Entidade, Long>{
 
 }
